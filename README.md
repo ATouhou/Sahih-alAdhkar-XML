@@ -2,4 +2,4 @@
 
 ## Plan
 
-![The Plan](plan.svg)
+![The Plan](plan.png)
