@@ -23,6 +23,12 @@
       font-family: "Amiri";
       text-align: center;
     }
+    h2{
+      background: #d40000;
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+    }
     .arabic{
       font-family: "Traditional Arabic";
       font-size: 2.5em;
