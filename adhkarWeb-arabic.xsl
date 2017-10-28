@@ -4,6 +4,10 @@
 
 <xsl:output method="html" encoding="utf-8" indent="yes" />
 
+<xsl:template match="/group/dua/content/narrator">
+  <span class="narrator"><xsl:value-of select="." /></span>
+</xsl:template>
+
 <xsl:template match="/">
 <html lang="ar" dir="rtl">
 <head>
@@ -29,10 +33,20 @@
       border-radius: 5px;
       color: white;
     }
-    .arabic{
-      font-family: "Traditional Arabic";
+    .arabic > para{
+      font-family: "KFGQPC Uthman Taha Naskh";
       font-size: 2.5em;
       text-align: right;
+    }
+    .arabic > para > narrator{
+      font-family: "KFGQPC Uthman Taha Naskh";
+      text-align: right;
+      color: green;
+    }
+    .arabic > para > dua{
+      font-family: "KFGQPC Uthman Taha Naskh";
+      text-align: right;
+      color: blue;
     }
     .reference{color:brown}
   </style>
@@ -47,7 +61,10 @@
           <xsl:for-each select="dua">
             <li>
               <div class="arabic">
-                <xsl:value-of select="content"/>
+                <!-- <xsl:value-of select="content"/> -->
+                <xsl:for-each select="content/para">
+                  <xsl:copy-of select="."/>
+                </xsl:for-each>
               </div>
               <div class="reference">
                 <xsl:value-of select="reference/arabic"/>
