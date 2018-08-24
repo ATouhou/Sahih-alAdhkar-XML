@@ -17,6 +17,7 @@
     *{
       font-family: sans-serif;
       text-align: right;
+      text-direction: rtl;
     }
     body{
       width: 960px;
@@ -49,6 +50,23 @@
       color: blue;
     }
     .reference{color:brown}
+    
+    
+    .arabic > p{
+      font-family: "KFGQPC Uthman Taha Naskh";
+      font-size: 2.5em;
+      text-align: right;
+    }
+    .arabic > p > narrator{
+      font-family: "KFGQPC Uthman Taha Naskh";
+      text-align: right;
+      color: green;
+    }
+    .arabic > p > dua{
+      font-family: "KFGQPC Uthman Taha Naskh";
+      text-align: right;
+      color: blue;
+    }
   </style>
 </head>
 <body>
@@ -62,7 +80,7 @@
             <li>
               <div class="arabic">
                 <!-- <xsl:value-of select="content"/> -->
-                <xsl:for-each select="content/para">
+                <xsl:for-each select="content/p">
                   <xsl:copy-of select="."/>
                 </xsl:for-each>
               </div>
