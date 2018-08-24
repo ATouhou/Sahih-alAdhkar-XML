@@ -80,7 +80,7 @@
             <li>
               <div class="arabic">
                 <!-- <xsl:value-of select="content"/> -->
-                <xsl:for-each select="content/p">
+                <xsl:for-each select="content-narration/p">
                   <xsl:copy-of select="."/>
                 </xsl:for-each>
               </div>
